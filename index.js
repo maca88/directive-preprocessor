@@ -16,7 +16,11 @@ const preprocessSource = (source, options) => {
       fs.mkdirSync(outputDir, { recursive: true });
     }
 
-    fs.writeFileSync(options.outputPath, result);
+    if (result) {
+      fs.writeFileSync(options.outputPath, result);
+    } else if (fs.existsSync(options.outputPath)) {
+      fs.unlinkSync(options.outputPath);
+    }
   } else {
     process.stdout.write(result);
   }
