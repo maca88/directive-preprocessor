@@ -131,7 +131,7 @@ const watchFile = (filePath, targetName, options) => {
 let stdin = '';
 
 const program = new Command()
-  .version('1.1.0', '-v, --version', 'output the current version');
+  .version('1.1.1', '-v, --version', 'output the current version');
 
 program
   .command('init')
